@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
   id?: string;
   as?: "div" | "section";
+  delay?: number;
 };
 
 export function Reveal({
@@ -14,6 +15,7 @@ export function Reveal({
   className = "",
   id,
   as = "div",
+  delay = 0,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
 
@@ -42,6 +44,10 @@ export function Reveal({
 
   const classes = `reveal ${className}`;
   const Tag = as;
+  const style =
+    delay > 0
+      ? ({ transitionDelay: `${delay}ms` } as CSSProperties)
+      : undefined;
 
   return (
     <Tag
@@ -50,6 +56,7 @@ export function Reveal({
       }}
       id={id}
       className={classes}
+      style={style}
     >
       {children}
     </Tag>
