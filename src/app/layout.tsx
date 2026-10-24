@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { StickyCta } from "@/components/StickyCta";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const sans = DM_Sans({
   subsets: ["latin"],
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
-const body = DM_Sans({
+const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -21,40 +23,43 @@ const siteUrl = "https://arunprabhakarfilms.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Arun Prabhakar — Film Director & Cinematographer",
+  title: "Arun Prabhakar | Film Director & Cinematographer",
   description:
-    "Arun Prabhakar — Film Director & Cinematographer based in Bangalore. Tamil cinema craft. Call or WhatsApp +91 93437 26271.",
+    "Arun Prabhakar, Film Director and Cinematographer based in Bangalore. Tamil and Kannada cinema. Call or WhatsApp +91 93437 26271.",
   keywords: [
     "Arun Prabhakar",
     "film director",
     "cinematographer",
+    "filmographer",
     "Tamil cinema",
+    "Kannada cinema",
     "Bangalore",
     "filmmaker",
+    "Kadhal Yuddham",
   ],
   authors: [{ name: "Arun Prabhakar" }],
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Arun Prabhakar — Film Director & Cinematographer",
+    title: "Arun Prabhakar | Film Director & Cinematographer",
     description:
-      "Film Director & Cinematographer · Bangalore · Tamil cinema. Contact +91 93437 26271.",
+      "Film Director and Cinematographer in Bangalore. Tamil and Kannada cinema. Contact +91 93437 26271.",
     siteName: "Arun Prabhakar Films",
     images: [
       {
-        url: "/hero-camera.jpg",
-        width: 1200,
-        height: 1600,
-        alt: "Arun Prabhakar with a cinema camera on location",
+        url: "/ap-holding-camera.jpeg",
+        width: 1536,
+        height: 2048,
+        alt: "Arun Prabhakar with a cinema camera",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arun Prabhakar — Film Director & Cinematographer",
+    title: "Arun Prabhakar | Film Director & Cinematographer",
     description:
-      "Film Director & Cinematographer · Bangalore · Tamil cinema.",
-    images: ["/hero-camera.jpg"],
+      "Film Director and Cinematographer in Bangalore. Tamil and Kannada cinema.",
+    images: ["/ap-holding-camera.jpeg"],
   },
   robots: {
     index: true,
@@ -71,10 +76,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="bg-bg text-fg antialiased pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
+      <body className="bg-bg font-sans text-fg antialiased pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0">
         <div className="grain" aria-hidden="true" />
+        <Header />
         {children}
+        <Footer />
+        <StickyCta />
       </body>
     </html>
   );

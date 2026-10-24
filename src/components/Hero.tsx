@@ -4,53 +4,53 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh items-end overflow-hidden"
+      className="section-band pt-[calc(4rem+1.5rem)] pb-[clamp(3.5rem,10vw,5.5rem)] md:pt-[calc(4rem+2rem)]"
       aria-label="Introduction"
     >
-      <div className="letterbox letterbox--top" aria-hidden="true" />
-      <div className="letterbox letterbox--bottom" aria-hidden="true" />
+      <div className="site-shell">
+        <figure className="cinema-card hero-animate m-0">
+          <div className="media-frame">
+            <Image
+              src="/banner-image.jpeg"
+              alt="Kadhal Yuddham banner with Tamil Film Producers Council credit for Arun Prabhakaran"
+              width={1280}
+              height={512}
+              priority
+              sizes="(max-width: 1152px) 100vw, 1152px"
+              className="h-auto w-full"
+            />
+          </div>
+        </figure>
 
-      <div className="absolute inset-0">
-        <Image
-          src="/hero-camera.jpg"
-          alt="Arun Prabhakar beside a professional cinema camera on location"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-ken object-cover object-[62%_center] md:object-[55%_center]"
-        />
-        <div
-          className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,8,8,0.98)_0%,rgba(8,8,8,0.5)_36%,rgba(8,8,8,0.2)_58%,rgba(8,8,8,0.45)_100%),radial-gradient(ellipse_at_50%_35%,transparent_0%,rgba(8,8,8,0.5)_100%)]"
-          aria-hidden="true"
-        />
-      </div>
-
-      <div className="hero-animate relative z-10 mx-auto w-full max-w-5xl px-[clamp(1.25rem,4vw,2.5rem)] pt-[calc(3.75rem+2rem)] pb-[clamp(3.5rem,11vh,6rem)] md:pb-[clamp(4.5rem,12vh,7.5rem)]">
-        <p className="bangalore-chip mb-4 inline-block border border-accent/70 px-2.5 py-1 text-[0.7rem] font-semibold tracking-[0.22em] text-accent uppercase">
-          Bangalore
-        </p>
-        <h1 className="font-[family-name:var(--font-display)] text-[clamp(3rem,12vw,5.75rem)] leading-[0.95] font-semibold tracking-[-0.02em] md:text-[clamp(4.5rem,7vw,6.25rem)]">
-          Arun Prabhakar
-        </h1>
-        <p className="mt-3.5 text-[clamp(1rem,2.5vw,1.2rem)] font-normal text-muted">
-          Film Director &amp; Cinematographer
-        </p>
-        <div className="mt-7 hidden flex-wrap gap-3 md:flex">
-          <a
-            href="tel:+919343726271"
-            className="inline-flex min-h-12 items-center justify-center bg-accent px-6 text-[0.85rem] font-semibold tracking-[0.06em] text-bg uppercase transition-colors hover:bg-accent-hover"
-          >
-            Call
-          </a>
-          <a
-            href="https://wa.me/919343726271"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center border border-fg/20 px-6 text-[0.85rem] font-semibold tracking-[0.06em] text-fg uppercase transition-colors hover:border-accent hover:text-accent"
-          >
-            WhatsApp
-          </a>
+        <div className="hero-animate-delay mt-[clamp(2.25rem,6vw,3.5rem)] mb-[clamp(2.25rem,6vw,3.5rem)] max-w-3xl">
+          <h1 className="type-hero">Arun Prabhakar</h1>
+          <p className="mt-4 text-[clamp(1.1rem,2.4vw,1.3rem)] text-muted">
+            Film Director &amp; Cinematographer
+          </p>
+          <p className="type-body mt-6 max-w-xl">
+            Bangalore based film director and cinematographer working across
+            Tamil and Kannada cinema, shaping stories through light, lens, and
+            direction.
+          </p>
         </div>
+
+        <figure className="cinema-card m-0">
+          <div className="media-frame">
+            <Image
+              src="/ap-holding-camera.jpeg"
+              alt="Arun Prabhakar standing with a professional cinema camera"
+              width={1200}
+              height={1600}
+              sizes="(max-width: 1152px) 100vw, 720px"
+              className="mx-auto h-auto w-full max-w-xl"
+            />
+          </div>
+          <figcaption className="caption-panel">
+            <p className="type-caption">
+              On location with the camera, ready for the next frame.
+            </p>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

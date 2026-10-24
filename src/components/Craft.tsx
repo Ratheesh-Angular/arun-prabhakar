@@ -2,16 +2,19 @@ import { Reveal } from "./Reveal";
 
 const pillars = [
   {
+    number: "01",
     title: "Direction",
-    text: "Guiding performance, pace, and story from the director's chair — keeping every scene aligned with the larger picture.",
+    text: "Guiding performance, pace, and story from the director's chair, keeping every scene aligned with the larger picture.",
   },
   {
+    number: "02",
     title: "Cinematography",
-    text: "Light, lens, and composition that serve emotion: shaping mood on location and in controlled set environments.",
+    text: "Light, lens, and composition that serve emotion, shaping mood on location and in controlled set environments.",
   },
   {
-    title: "On-set camera",
-    text: "Hands-on work with professional cinema cameras — including ARRI systems — from temple courtyards to studio floors.",
+    number: "03",
+    title: "On set camera",
+    text: "Hands on work with professional cinema cameras, including ARRI systems, from temple courtyards to studio floors.",
   },
 ];
 
@@ -20,29 +23,31 @@ export function Craft() {
     <Reveal
       as="section"
       id="craft"
-      className="border-t border-fg/10 px-[clamp(1.25rem,4vw,2.5rem)] py-[clamp(4.5rem,12vw,7.5rem)]"
+      className="section-band--elevated section-pad"
     >
-      <div className="mx-auto max-w-5xl">
-        <p className="mb-3 text-[0.7rem] font-semibold tracking-[0.2em] text-accent uppercase">
-          Craft
-        </p>
-        <h2 className="mb-8 font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,2.85rem)] leading-[1.15] font-semibold tracking-[-0.01em] md:mb-12">
-          How the work takes shape
-        </h2>
-        <ul className="grid gap-10 md:grid-cols-3 md:gap-8">
+      <div className="site-shell">
+        <div className="mb-10 max-w-2xl md:mb-14">
+          <p className="eyebrow mb-4">Craft</p>
+          <h2 className="type-section">How the work takes shape</h2>
+          <p className="type-body mt-5">
+            Direction, cinematography, and camera. Three disciplines, one
+            cinematic eye.
+          </p>
+        </div>
+
+        <ul className="m-0 grid list-none gap-6 p-0 md:grid-cols-3 md:gap-8">
           {pillars.map((item, index) => (
             <Reveal
               key={item.title}
-              as="div"
-              className="border-t border-fg/12 pt-6 md:pt-7"
-              delay={index * 120}
+              as="li"
+              className="border-t border-fg/12 pt-7"
+              delay={index * 100}
             >
-              <h3 className="mb-2 font-[family-name:var(--font-display)] text-[1.65rem] font-semibold text-fg">
-                {item.title}
-              </h3>
-              <p className="max-w-sm text-[1.02rem] leading-relaxed text-muted">
-                {item.text}
+              <p className="text-[0.75rem] font-medium tracking-[0.16em] text-accent">
+                {item.number}
               </p>
+              <h3 className="type-subhead mt-5 text-[1.75rem]">{item.title}</h3>
+              <p className="type-body mt-4">{item.text}</p>
             </Reveal>
           ))}
         </ul>

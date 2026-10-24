@@ -1,25 +1,19 @@
-import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Craft } from "@/components/Craft";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { Education } from "@/components/Education";
 import { Hero } from "@/components/Hero";
-import { Legacy } from "@/components/Legacy";
-import { StickyCta } from "@/components/StickyCta";
+import { Presence } from "@/components/Presence";
+import { Signature } from "@/components/Signature";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Legacy />
-        <Craft />
-        <Contact />
-      </main>
-      <Footer />
-      <StickyCta />
-    </>
+    <main>
+      <Hero />
+      <Education />
+      <Presence />
+      <Craft />
+      <Signature />
+      <Contact teaser />
+    </main>
   );
 }

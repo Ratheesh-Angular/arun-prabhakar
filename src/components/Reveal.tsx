@@ -6,7 +6,7 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   id?: string;
-  as?: "div" | "section";
+  as?: "div" | "section" | "li";
   delay?: number;
 };
 
@@ -51,7 +51,7 @@ export function Reveal({
 
   return (
     <Tag
-      ref={(node) => {
+      ref={(node: HTMLElement | null) => {
         ref.current = node;
       }}
       id={id}
