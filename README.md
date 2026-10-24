@@ -24,7 +24,7 @@ Output is in `out/` (fully static HTML/CSS/JS).
 | Setting | Value |
 |---------|--------|
 | Framework preset | Next.js (Static HTML Export) or None |
-| Build command | `npm run build` |
+| Build command | `npm run build` (uses Webpack; avoid bare `npx next build`) |
 | Build output directory | `out` |
 | Node version | 20+ |
 

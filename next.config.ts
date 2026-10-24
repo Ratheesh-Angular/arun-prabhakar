@@ -7,6 +7,5 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
 };
-//sss
 
 export default nextConfig;
